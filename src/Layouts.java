@@ -7,7 +7,7 @@ public class Layouts extends JFrame implements ActionListener {
     JLabel l1,l2;
     JButton carbtn, vanbtn, reset;
     JTextField t1, t2;
-    JPanel pn1, pn2;
+    JPanel north, south;
     public int cnt;
     public static void main(String[] args) {
     new Layouts();
@@ -17,33 +17,36 @@ public class Layouts extends JFrame implements ActionListener {
         setSize(600, 300);
         setTitle("CarsAndVans");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        
+        //Labels
         l1 = new JLabel("Cars");
         l2 = new JLabel("Vans");
-
+        
+        //Buttons
         carbtn = new JButton("CARS");
         carbtn.addActionListener(this);
         vanbtn = new JButton("VANS");
         vanbtn.addActionListener(this);
         reset = new JButton("RESET");
         reset.addActionListener(this);
-
+        
+        //TextFields
         t1 = new JTextField();
         t1.setEditable(false);
         t1.setText("0");
         t2 = new JTextField();
         t2.setEditable(false);
         t2.setText("0");
-
-        pn1 = new JPanel();
-        pn1.setBorder(BorderFactory.createLineBorder(Color.RED));
-        add("North", pn1);
-        pn1.add(l1);pn1.add(t1);pn1.add(l2);pn1.add(t2);
-
-        pn2 = new JPanel();
-        pn2.setBorder(BorderFactory.createLineBorder(Color.blue));
-        add("South", pn2);
-        pn2.add(carbtn);pn2.add(vanbtn);pn2.add(reset);
+        
+        //Panels
+        north = new JPanel();
+        north.setBorder(BorderFactory.createLineBorder(Color.RED));
+        add("North", north);
+        north.add(l1);north.add(t1);north.add(l2);north.add(t2);
+        south = new JPanel();
+        south.setBorder(BorderFactory.createLineBorder(Color.blue));
+        add("South", south);
+        south.add(carbtn);south.add(vanbtn);south.add(reset);
 
 
 
